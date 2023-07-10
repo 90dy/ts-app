@@ -1,0 +1,30 @@
+name: Pull templates
+on:
+  schedule:
+    # - cron: 0 1 * * *
+    - cron: 1/15 * * * *
+jobs:
+  pull:
+    name: Pull templates
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        template:
+          - 90dy/lib.js
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: main
+    - name: Include .gitconfig to .git/config
+      run: |
+        [ ! -d '.git' ] || git config --local include.path $PWD/.gitconfig
+    - name: Pull template
+      run: |
+        git fetch template/${{ matrix.template }}
+        git merge --squash --allow-unrelated-histories template/${{ matrix.template }}
+    - name: Create pull request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        title: Auto upgrade from template
+        branch: template/${{ matrix.template }}
+        commit-message: "chore: auto upgrade from template"
