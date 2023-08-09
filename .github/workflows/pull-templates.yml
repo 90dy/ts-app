@@ -11,6 +11,7 @@ jobs:
       matrix:
         template:
           - 90dy/lib.js
+          - 90dy/app.js
     steps:
     - uses: actions/checkout@v2
       with:
