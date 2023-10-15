@@ -1,4 +1,4 @@
-[remote "template/90dy/lib.js"]
-	url = "https://github.com/90dy/lib.js"
-	fetch = "+refs/heads/main:refs/remotes/template/90dy/lib.js"
+[remote "template/90dy/ts-lib"]
+	url = "https://github.com/90dy/ts-lib"
+	fetch = "+refs/heads/main:refs/remotes/template/90dy/ts-lib"
 	tagOpt = --no-tags

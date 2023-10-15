@@ -9,6 +9,9 @@ overrides:
   metro-resolver: ^0.73.7
 
 dependencies:
+  '@expo/config':
+    specifier: ^8.1.2
+    version: 8.1.2
   expo:
     specifier: ^49.0.6
     version: 49.0.6(@babel/core@7.22.10)
@@ -59,6 +62,9 @@ devDependencies:
   metro-core:
     specifier: ^0.78.0
     version: 0.78.0
+  semver:
+    specifier: ^7.5.4
+    version: 7.5.4
 
 packages:
 
@@ -124,7 +130,7 @@ packages:
   /@babel/code-frame@7.10.4:
     resolution: {integrity: sha512-vG6SvB6oYEhvgisZNFRmRCUkLz11c7rp+tbNTynGqc6mS1d5ATd/sGyV6W0KZZnXRKMTzZDRgQT3Ou9jhpAfUg==}
     dependencies:
-      '@babel/highlight': 7.22.5
+      '@babel/highlight': 7.22.10
     dev: false
 
   /@babel/code-frame@7.22.10:
