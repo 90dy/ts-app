@@ -12,9 +12,10 @@ jobs:
     strategy:
       matrix:
         template:
+          - 90dy/ts-lib
           - 90dy/ts-app
 
-    name: Sync ${{ template }}
+    name: Sync ${{ matrix.template }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
